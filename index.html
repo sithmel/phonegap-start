@@ -2,62 +2,138 @@
 <html>
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
-		<title>Training App</title>
-		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
-		
+		<title>Demo</title>
+		<link rel="stylesheet" href="assets/tabs-slideshow.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="assets/jquery.mobile-1.0b2.css" type="text/css" media="screen" />
 		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
-		
+		<script src="assets/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/jquery.mobile-1.0b2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/jquery.tools.min.js" type="text/javascript" charset="utf-8"></script>
+<style>	
+    img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}    
+.images{
+width:90% !important;
+}
+.images > div{
+width:100%;
+
+}
+
+</style>
 	</head>
 	<body>
- 		<div id="title_bar">Phone<strong>Gap</strong> Training App</div>
 
-		<div id="welcome" class="view">
-		  <div class="app_button" id="map_button">Show My Location</div>
-  	      <div class="app_button" id="settings_button">Settings</div>
-		</div>
+<!-- Start of first page: #one --> 
+<div data-role="page" id="foo"> 
+ 
+	<div data-role="header"> 
+		<h1>Multi-page</h1> 
+	</div><!-- /header --> 
+ 
+	<div data-role="content" id="one">	
+		<h2>One</h2> 
+		
+		<p>I have an id of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>	
+		
+		<p>This is a multi-page boilerplate template that you can copy to build you first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a <a href="page-template.html"> single page template</a> that has just one page within it.</p>	
+		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p> 
+		<p>You link to internal pages by referring to the ID of the page you want to show. For example, to <a href="#two" >link</a> to the page with an ID of "two", my link would have a <code>href="#two"</code> in the code.</p>	
+ 
+		<h3>Show internal pages:</h3> 
+		<p><a href="#two" data-role="button">Show page "two"</a></p>	
+		<p><a href="#popup"data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p> 
+	</div><!-- /content --> 
+	
+	<div data-role="footer" data-theme="d"> 
+		<h4>Page Footer</h4> 
+	</div><!-- /footer --> 
+</div><!-- /page one --> 
+ 
+ 
+<!-- Start of second page: #two --> 
+<div data-role="page" id="two" data-theme="a"> 
+ 
+	<div data-role="header"> 
+		<h1>Two</h1> 
+	</div><!-- /header --> 
+ 
+	<div data-role="content" data-theme="a">	
+		<h2>Two</h2> 
+ 
+<!-- container for the slides --> 
+<div class="images"> 
+ 
+	<!-- first slide --> 
+	<div> 
+		<h3>First pane</h3> 
+		<img src="assets/slide/image1.jpg"  /> 
+	</div> 
+	<div> 
+		<h3>Second pane</h3> 
+		<img src="assets/slide/image2.jpg"  /> 
+	</div> 
+	<div> 
+		<h3>Third pane</h3> 
+		<img src="assets/slide/image3.jpg"  /> 
+	</div> 
+ 
+</div> 
+<!-- the tabs --> 
+<div class="slidetabs"> 
+	<a href="#"></a> 
+	<a href="#"></a> 
+	<a href="#"></a> 
+</div> 
+		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>	
+		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>	
+		<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>	
+		
+	</div><!-- /content --> 
+	
+	<div data-role="footer"> 
+		<h4>Page Footer</h4> 
+	</div><!-- /footer --> 
+</div><!-- /page two --> 
+ 
+ 
+<!-- Start of third page: #popup --> 
+<div data-role="page" id="popup"> 
+ 
+	<div data-role="header" data-theme="e"> 
+		<h1>Dialog</h1> 
+	</div><!-- /header --> 
+ 
+	<div data-role="content" data-theme="d">	
+		<h2>Popup</h2> 
+		<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>		
+		<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
+	</div><!-- /content --> 
+	
+	<div data-role="footer"> 
+		<h4>Page Footer</h4> 
+	</div><!-- /footer --> 
+</div><!-- /page popup --> 
 
-		<div id="map" class="view">
-		  <div class="map_image">
-              <img id="static_map" src="assets/img/staticmap.png">
-		  </div>
-		  <p>This is where you are</p>
-		  <div class="app_button" id="welcome_button">Go Back</div>
-		</div>
-
-		<div id="settings" class="view">
-		  <form id="settings_form">
-		    <fieldset>
-		      <legend>Map Type</legend>
-			  <input type="radio" name="map" value="roadmap" checked>Road Map<br/>
-		      <input type="radio" name="map" value="satellite">Satellite<br/>
-		      <input type="radio" name="map" value="terrain">Terrain<br/>
-		      <input type="radio" name="map" value="hybrid">Hybrid<br/>
-		    </fieldset>
-		    <fieldset>
-		      <legend>Zoom Level</legend>
-  		      <input type="radio" name="zoom" value="10">Super Far<br/>
-  		      <input type="radio" name="zoom" value="12">Far<br/>
-  		      <input type="radio" name="zoom" value="15" checked>Normal<br/>
-  		      <input type="radio" name="zoom" value="18">Close<br/>
-  		      <input type="radio" name="zoom" value="20">Super Close<br/>
-  		     </fieldset>
-		      <button id="save_button">Save</button>
-	      </form>
-		</div>
-
+<script language="JavaScript"> 
+// What is $(document).ready ? See: http://flowplayer.org/tools/documentation/basics.html#document_ready
+$(function() {
+ 
+    $(".slidetabs").tabs(".images > div", {
+     
+	    // enable "cross-fading" effect
+	    effect: 'fade',
+	    fadeOutSpeed: "slow",
+     
+	    // start from the beginning after the last tab
+	    rotate: true
+     
+    // use the slideshow plugin. It accepts its own configuration
+    }).slideshow();
+});
+</script> 
 	</body>
 </html>
